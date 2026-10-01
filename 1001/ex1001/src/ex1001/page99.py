@@ -21,3 +21,10 @@ result = add_messages(msgs1, msgs2)
 print(result)
 # [HumanMessage(content='Hello', additional_kwargs={}, response_metadata={}, id='1'), 
 # AIMessage(content='Hi there!', additional_kwargs={}, response_metadata={}, id='2', tool_calls=[], invalid_tool_calls=[])]
+
+# ----- 동일한 id를 가진 메세지 추가하기 -----
+msgs3 = [HumanMessage(content="Hello", id="3")]
+msgs4 = [HumanMessage(content="Hello, this is overridden", id="3")]
+
+result1 = add_messages(msgs3, msgs4)
+print(result1)
